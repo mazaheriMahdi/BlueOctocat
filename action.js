@@ -16,20 +16,20 @@ const subject = github.context.payload.pull_request ?? github.context.payload.is
 
 console.log(🙋‍♂️ , "executing subject" , subject);
 
-const type = github.context.payload.pull_request ? 'pull request' : 'issue';
-const text = `🙋‍♂️ A new <b>${type}</b> by <b>${subject.user.login}</b>:\n<a href="${subject.html_url}">${subject.title}</a>`;
+// const type = github.context.payload.pull_request ? 'pull request' : 'issue';
+// const text = `🙋‍♂️ A new <b>${type}</b> by <b>${subject.user.login}</b>:\n<a href="${subject.html_url}">${subject.title}</a>`;
 
-const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    text: text,
-    chat_id: userId,
-    parse_mode: 'html'
-  })
-});
+// const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify({
+//     text: text,
+//     chat_id: userId,
+//     parse_mode: 'html'
+//   })
+// });
 
-if (!response.ok) {
-  const jsonResponse = await response.json();
-  core.setFailed(jsonResponse);
-}
+// if (!response.ok) {
+//   const jsonResponse = await response.json();
+//   core.setFailed(jsonResponse);
+// }
