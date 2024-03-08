@@ -14,7 +14,7 @@ if (!userId) {
 
 const subject = github.context.payload.pull_request ?? github.context.payload.issue;
 
-console.log(🙋‍♂️ , "executing subject" , subject);
+console.log("🙋‍♂️ executing subject" , subject);
 
 // const type = github.context.payload.pull_request ? 'pull request' : 'issue';
 // const text = `🙋‍♂️ A new <b>${type}</b> by <b>${subject.user.login}</b>:\n<a href="${subject.html_url}">${subject.title}</a>`;
